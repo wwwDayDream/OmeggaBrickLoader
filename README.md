@@ -1,29 +1,19 @@
-<!--
-
-When uploading your plugin to github/gitlab
-start your repo name with "omegga-"
-
-example: https://github.com/wwwDayDream/omegga-BrickLoader
-
-Your plugin will be installed via omegga install gh:wwwDayDream/BrickLoader
-
--->
-
 # BrickLoader
 
-A typed safe plugin for [omegga](https://github.com/brickadia-community/omegga).
+A typed safe plugin for [omegga](https://github.com/brickadia-community/omegga). Enables you to save bricks via a chat command a load the bricks to the users clipboard with Interactables. Facilitates sharing your creations!
 
-This is an auto-generated README file. Please change it before publishing your plugin!
-
-Be sure to edit the script in `setup.sh` to configure your plugin on install, or
-remove it entirely if it is unnecessary.
 
 ## Install
 
 `omegga install gh:wwwDayDream/BrickLoader`
 
-_TODO: more steps...?_
+## Chat Commands
 
-## Usage
+Select bricks, copy them with CTRL + C, then enter:
+`/SaveBricks <SaveName>` - Saves the bricks you've copied (from the world) onto the server. Requires 'Building.Prefabs.SaveToServer' permission.
 
-_TODO: include some usage information_
+## Interaction Commands
+
+`.LoadBricks <SaveName>` - Loads the bricks into your ghost placement. Requires 'Building.Placer' permission.
+Example `.LoadBricks Test`
+
