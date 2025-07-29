@@ -65,30 +65,6 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
         this.omegga.whisper(thisPlayer, 'Loaded \'' + whatToLoad + '\' save from server!')
         return;
       }
-
-      if (interaction.message.toLowerCase().startsWith(".placebricks")) {
-        if (!thisPlayer.getPermissions()['BR.Permission.Building.Placer']) {
-          this.omegga.whisper(thisPlayer, 'You don\'t have permission to build!');
-          return;
-        }
-        
-        var args = interaction.message.substring(('.placebricks').length).trimStart().split(' ');
-        if (args.length < 4) return;
-        var whatToLoad = args[0];
-        var whereXOff = Number(args[1]);
-        var whereYOff = Number(args[2]);
-        var whereZOff = Number(args[3]);
-        var quiet = args.length > 4 && (args[4] == 'quiet' || args[4] == 'silent');
-        
-        if (!this.saveExists(whatToLoad)) {
-          this.omegga.whisper(thisPlayer, 'The save \'' + whatToLoad + '\' doesn\'t exist!');
-          return;
-        }
-        this.omegga.loadBricks(whatToLoad, { offX: whereXOff, offY: whereYOff, offZ: whereZOff, quiet: quiet})
-
-        this.omegga.whisper(thisPlayer, 'Placed \'' + whatToLoad + '\' save from server!')
-        return;
-      }
     });
 
     return { registeredCommands: ['savebricks'] };
